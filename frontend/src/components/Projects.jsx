@@ -1,93 +1,41 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Calendar } from 'lucide-react'
 
 const Projects = () => {
-  const [projects, setProjects] = useState([])
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch('/api/projects')
-        if (response.ok) {
-          const data = await response.json()
-          setProjects(data)
-        } else {
-          // Fallback to static data if API fails
-          const staticProjects = [
-            {
-              _id: 1,
-              title: 'Robin',
-              description: 'A real-time interactive agent that can take any type of call. Built with advanced AI capabilities to handle voice and text interactions seamlessly.',
-              technologies: ['React', 'Node.js', 'WebSocket', 'AI/ML', 'WebRTC'],
-              liveUrl: '#',
-              githubUrl: '#',
-              image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800',
-              featured: true
-            },
-            {
-              _id: 2,
-              title: 'Outreach OS',
-              description: 'A comprehensive outreach automation platform similar to Instantly and Smartlead. Features email campaigns, lead management, and analytics dashboard.',
-              technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Nodemailer'],
-              liveUrl: '#',
-              githubUrl: '#',
-              image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
-              featured: true
-            },
-            {
-              _id: 3,
-              title: 'E-Commerce Platform',
-              description: 'A full-featured e-commerce solution with payment integration, inventory management, and real-time order tracking.',
-              technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis'],
-              liveUrl: '#',
-              githubUrl: '#',
-              image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
-              featured: false
-            },
-            {
-              _id: 4,
-              title: 'Task Management System',
-              description: 'A collaborative task management tool with real-time updates, team collaboration features, and advanced reporting.',
-              technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Socket.io', 'Docker'],
-              liveUrl: '#',
-              githubUrl: '#',
-              image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
-              featured: false
-            }
-          ]
-          setProjects(staticProjects)
-        }
-      } catch (error) {
-        console.error('Error fetching projects:', error)
-        // Fallback to static data
-        const staticProjects = [
-          {
-            _id: 1,
-            title: 'Robin',
-            description: 'A real-time interactive agent that can take any type of call. Built with advanced AI capabilities to handle voice and text interactions seamlessly.',
-            technologies: ['React', 'Node.js', 'WebSocket', 'AI/ML', 'WebRTC'],
-            liveUrl: '#',
-            githubUrl: '#',
-            image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800',
-            featured: true
-          },
-          {
-            _id: 2,
-            title: 'Outreach OS',
-            description: 'A comprehensive outreach automation platform similar to Instantly and Smartlead. Features email campaigns, lead management, and analytics dashboard.',
-            technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Nodemailer'],
-            liveUrl: '#',
-            githubUrl: '#',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
-            featured: true
-          }
-        ]
-        setProjects(staticProjects)
-      }
+  const [projects, setProjects] = useState([
+    {
+      _id: 1,
+      title: 'Robin',
+      description: 'A real-time interactive agent that can take any type of call. Built with advanced AI capabilities to handle voice and text interactions seamlessly.',
+      technologies: ['React', 'Node.js', 'WebSocket', 'AI/ML', 'WebRTC'],
+      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800',
+      featured: true
+    },
+    {
+      _id: 2,
+      title: 'Outreach OS',
+      description: 'A comprehensive outreach automation platform similar to Instantly and Smartlead. Features email campaigns, lead management, and analytics dashboard.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Nodemailer'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
+      featured: true
+    },
+    {
+      _id: 3,
+      title: 'E-Commerce Platform',
+      description: 'A full-featured e-commerce solution with payment integration, inventory management, and real-time order tracking.',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis'],
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
+      featured: false
+    },
+    {
+      _id: 4,
+      title: 'Task Management System',
+      description: 'A collaborative task management tool with real-time updates, team collaboration features, and advanced reporting.',
+      technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Socket.io', 'Docker'],
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
+      featured: false
     }
-
-    fetchProjects()
-  }, [])
+  ])
 
   return (
     <section id="projects" className="py-20 bg-primary-30/30">
