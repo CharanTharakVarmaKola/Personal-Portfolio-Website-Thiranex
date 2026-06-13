@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://kolacharantharakvarma_db_user:czNUHbUem63HF18e@thiranex.njks3uf.mongodb.net/portfolio?appName=Thiranex';
 
 // Connect to MongoDB (only if not already connected)
 if (mongoose.connection.readyState === 0) {
@@ -36,7 +36,7 @@ module.exports = app;
 
 // Only listen if not in Vercel environment
 if (require.main === module) {
-  const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT || 5002;
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
