@@ -14,9 +14,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio';
-mongoose.connect(MONGODB_URI)
-  .then(() => console.log('MongoDB connected successfully'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+
+// Connect to MongoDB (only if not already connected)
+if (mongoose.connection.readyState === 0) {
+  mongoose.connect(MONGODB_URI)
+    .then(() => console.log('MongoDB connected successfully'))
+    .catch((err) => console.error('MongoDB connection error:', err));
+}
 
 // Routes
 app.use('/api/projects', require('./routes/projects'));
@@ -27,7 +31,13 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Export for Vercel
+module.exports = app;
+
+// Only listen if not in Vercel environment
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
