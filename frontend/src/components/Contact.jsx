@@ -11,20 +11,19 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch('/api/contact', {
+      // Send data to Google Sheets via Google Apps Script
+      const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'
+      const response = await fetch(scriptURL, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       })
 
-      if (response.ok) {
-        alert('Thank you for your message! I will get back to you soon.')
-        setFormData({ name: '', email: '', message: '' })
-      } else {
-        alert('There was an error submitting your message. Please try again.')
-      }
+      alert('Thank you for your message! I will get back to you soon.')
+      setFormData({ name: '', email: '', message: '' })
     } catch (error) {
       console.error('Error submitting form:', error)
       alert('There was an error submitting your message. Please try again.')
