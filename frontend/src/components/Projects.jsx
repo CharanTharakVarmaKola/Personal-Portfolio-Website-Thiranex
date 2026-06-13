@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ExternalLink, Github, Calendar, Chip } from 'lucide-react'
+import { ExternalLink, Github, Calendar } from 'lucide-react'
 
 const Projects = () => {
   const [projects, setProjects] = useState([])
