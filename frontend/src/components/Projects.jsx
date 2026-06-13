@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ExternalLink, Github, Calendar } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 
 const Projects = () => {
   const [projects, setProjects] = useState([])
@@ -122,23 +122,6 @@ const Projects = () => {
                     {tech}
                   </span>
                 ))}
-              </div>
-
-              <div className="flex gap-4">
-                <a
-                  href={project.liveUrl}
-                  className="flex items-center gap-2 text-secondary hover:text-accent transition-colors"
-                >
-                  <ExternalLink size={18} />
-                  Live Demo
-                </a>
-                <a
-                  href={project.githubUrl}
-                  className="flex items-center gap-2 text-secondary hover:text-accent transition-colors"
-                >
-                  <Github size={18} />
-                  Source Code
-                </a>
               </div>
             </div>
           ))}

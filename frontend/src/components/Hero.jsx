@@ -14,7 +14,7 @@ const Hero = () => {
               Hello, I'm
             </span>
             <br />
-            <span className="text-dark">Your Name</span>
+            <span className="text-dark">Charan Tharak Varma</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-2">
             Third Year Student at SRM University Ramapuram
