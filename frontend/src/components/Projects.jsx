@@ -90,10 +90,10 @@ const Projects = () => {
   }, [])
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 bg-primary-30/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">Featured Projects</h2>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div key={project._id || project.id} className="card group">
@@ -104,37 +104,37 @@ const Projects = () => {
                   className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
                 {project.featured && (
-                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Featured
                   </div>
                 )}
               </div>
-              
-              <h3 className="text-2xl font-bold mb-2 text-white">{project.title}</h3>
-              <p className="text-gray-400 mb-4">{project.description}</p>
-              
+
+              <h3 className="text-2xl font-bold mb-2 text-dark">{project.title}</h3>
+              <p className="text-gray-600 mb-4">{project.description}</p>
+
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm"
+                    className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              
+
               <div className="flex gap-4">
                 <a
                   href={project.liveUrl}
-                  className="flex items-center gap-2 text-primary hover:text-secondary transition-colors"
+                  className="flex items-center gap-2 text-secondary hover:text-accent transition-colors"
                 >
                   <ExternalLink size={18} />
                   Live Demo
                 </a>
                 <a
                   href={project.githubUrl}
-                  className="flex items-center gap-2 text-primary hover:text-secondary transition-colors"
+                  className="flex items-center gap-2 text-secondary hover:text-accent transition-colors"
                 >
                   <Github size={18} />
                   Source Code

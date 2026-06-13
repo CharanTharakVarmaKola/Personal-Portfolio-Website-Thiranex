@@ -43,24 +43,24 @@ const Skills = () => {
   ]
 
   return (
-    <section id="skills" className="py-20 bg-gray-900/50">
+    <section id="skills" className="py-20 bg-white/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">Technical Skills</h2>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category) => (
             <div key={category.category} className="card">
-              <h3 className="text-2xl font-bold mb-6 text-primary">{category.category}</h3>
+              <h3 className="text-2xl font-bold mb-6 text-secondary">{category.category}</h3>
               <div className="space-y-4">
                 {category.skills.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-2">
-                      <span className="text-gray-300">{skill.name}</span>
-                      <span className="text-gray-400">{skill.level}%</span>
+                      <span className="text-gray-700">{skill.name}</span>
+                      <span className="text-gray-500">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="w-full bg-gray-200 rounded-full h-2">
                       <div
-                        className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-500"
+                        className="bg-gradient-to-r from-secondary to-accent h-2 rounded-full transition-all duration-500"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
