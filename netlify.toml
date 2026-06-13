@@ -1,0 +1,34 @@
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+[context.deploy-preview]
+  environment = { NODE_ENV = "development" }
+
+# SPA Redirect - ensures all routes go to index.html for React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# API Proxy - Configure the backend URL below
+# Uncomment and update BACKEND_URL to your deployed backend service
+# [[redirects]]
+#   from = "/api/*"
+#   to = "BACKEND_URL/api/:splat"
+#   status = 200
+#   force = true
+
+# Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https:; img-src 'self' https: data:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:"
