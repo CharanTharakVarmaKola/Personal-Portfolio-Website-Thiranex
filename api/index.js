@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://kolacharantharakvarma_db_user:czNUHbUem63HF18e@thiranex.njks3uf.mongodb.net/portfolio?appName=Thiranex';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://kolacharantharakvarma_db_user:czNUHbUem63HF18e@thiranex.njks3uf.mongodb.net/?appName=Thiranex';
 
 if (!mongoose.connection.readyState) {
   mongoose.connect(MONGODB_URI)
