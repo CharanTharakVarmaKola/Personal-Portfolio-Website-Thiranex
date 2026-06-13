@@ -47,7 +47,7 @@ const Hero = () => {
           <a href="#" className="text-gray-500 hover:text-secondary transition-colors duration-300">
             <Github size={32} />
           </a>
-          <a href="#" className="text-gray-500 hover:text-secondary transition-colors duration-300">
+          <a href="https://www.linkedin.com/in/one-man-tharak/" className="text-gray-500 hover:text-secondary transition-colors duration-300">
             <Linkedin size={32} />
           </a>
         </div>

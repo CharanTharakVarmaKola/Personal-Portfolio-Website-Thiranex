@@ -79,7 +79,7 @@ const Contact = () => {
               <a href="#" className="bg-secondary/20 p-3 rounded-lg text-secondary hover:bg-secondary hover:text-white transition-colors">
                 <Github size={24} />
               </a>
-              <a href="#" className="bg-secondary/20 p-3 rounded-lg text-secondary hover:bg-secondary hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/one-man-tharak/" className="bg-secondary/20 p-3 rounded-lg text-secondary hover:bg-secondary hover:text-white transition-colors">
                 <Linkedin size={24} />
               </a>
               <a href="#" className="bg-secondary/20 p-3 rounded-lg text-secondary hover:bg-secondary hover:text-white transition-colors">
